@@ -5,7 +5,7 @@ from datetime import datetime
 
 
 # Create your views here.
-def home(request, year, month):
+def home(request, year=datetime.now().year, month=datetime.now().strftime("%B")):
 
     # change month to capitalize
     month = month.capitalize()
