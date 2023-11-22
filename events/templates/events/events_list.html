@@ -1,27 +1,19 @@
 {% extends 'base.html' %}
 {% block eventlist %}
 
-    <center>
-        <h1 class="my-3">Events</h1>
-        {% for event in event_list %}
-        <h3 class="mt-5">
-            {{ event }}
-            <ul class="list-unstyled mt-3">
-                <li>
-                    Venue: {{ event.venue }}
-                </li>
-                <li>
-                    Venue site: {{ event.venue.email_address }}
-                </li>
-                <li>
-                    Date: {{ event.event_date }}
-                </li>
-                <li>
-                    Description: {{ event.description }}
-                </li>
-            </ul>
-        </h3>
-        {% endfor %}
-    </center>
+<h1>Events</h1>
+
+{% for event in event_list %}
+<div class="card text-center my-5">
+    <div class="card-header">
+        {{ event }}
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{ event.venue }}</h5>
+      <p class="card-text">{{ event.event_date }}</p>
+      <p class="card-text">{{ event.description }}</p>
+    </div>
+</div>
+{% endfor %}    
 
 {% endblock %}

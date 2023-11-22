@@ -27,6 +27,15 @@
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="{% url 'events-list' %}">Events</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'venues-list' %}">Venues</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'add-venue' %}">Add Venue</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'add-event' %}">Add Event</a>
+              </li>
             </ul>
             <form class="d-flex" role="search">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -38,7 +47,7 @@
 
     <section class="container">
         <div class="row my-5">
-            <div class="col-10 mx-auto">
+            <div class="col-6 mx-auto">
 
                 {% block content %}
                 <!-- Calendar -->
@@ -48,6 +57,13 @@
                 <!-- Event List -->
                 {% endblock eventlist %}
 
+                {% block addvenue %}
+                <!-- Add Venue Form -->
+                {% endblock addvenue %}
+
+                {% block addevent %}
+                <!-- Add Event Form -->
+                {% endblock addevent %}
             </div>
         </div>
     </section>
