@@ -48,7 +48,7 @@ class EventForm(ModelForm):
             'name': '',
             'event_date': 'YYYY-MM-DD HH:MM:SS',
             'venue': 'Venue',
-            'manager': '',
+            'manager': 'Manager',
             'description': ''
         }
 
@@ -56,8 +56,8 @@ class EventForm(ModelForm):
         widgets = {
             'name': forms.TextInput(attrs={'class':'form-control mb-3', 'placeholder': 'Event Name:'}),
             'event_date': forms.TextInput(attrs={'class':'form-control mb-3', 'placeholder': 'Event date and time:'}),
-            'venue': forms.TextInput(attrs={'class':'form-control mb-3', 'placeholder': 'Event venue'}),
-            'manager': forms.TextInput(attrs={'class':'form-control mb-3', 'placeholder': 'Event manager'}),
+            'venue': forms.Select(attrs={'class':'form-select mb-3', 'placeholder': 'Event venue'}),
+            'manager': forms.Select(attrs={'class':'form-select mb-3', 'placeholder': 'Event manager'}),
             'description': forms.Textarea(attrs={'class':'form-control mb-3', 'placeholder': 'Event Description'})
         }
 

@@ -7,6 +7,23 @@ from .models import Event, Venue, User
 from .forms import VenueForm, EventForm
 
 
+def update_event(request, event_id):
+
+    event = Event.objects.get(pk=event_id)
+    form = EventForm(request.POST or None, instance=event)
+
+    if form.is_valid():
+        form.save()
+        return redirect('events-list')
+
+    return render(
+        request,
+        'events/update_event.html',
+        {
+            'event': event,
+            'form': form
+        })
+
 def update_venue(request, venue_id):
     venue = Venue.objects.get(pk=venue_id)
     form = VenueForm(request.POST or None, instance=venue)

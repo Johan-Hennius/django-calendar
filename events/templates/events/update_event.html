@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="w-100 text-center">
+    <h1 class="my-3">Update {{ event }}</h1>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button type="submit" value="Update" class="btn btn-dark">Update</button>
+
+    </form>
+</div>
+
+{% endblock %}

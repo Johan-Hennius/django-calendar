@@ -4,16 +4,20 @@
 <h1>Events</h1>
 
 {% for event in event_list %}
-<div class="card text-center my-2 w-100">
-    <div class="card-header">
-        {{ event }}
-    </div>
-    <div class="card-body">
-      <h5 class="card-title">{{ event.venue }}</h5>
-      <p class="card-text">{{ event.event_date }}</p>
-      <p class="card-text">{{ event.description }}</p>
-    </div>
+<div class="card text-white bg-dark text-center my-2 w-100">
+  <div class="card-header">
+    {{ event }}
+  </div>
+  <div class="card-body py-4">
+    <h5 class="card-title">{{ event.venue }}</h5>
+    <p class="card-text">{{ event.event_date }}</p>
+    <p class="card-text">{{ event.description }}</p>
+  </div>
+  <div class="card-footer">
+    <a href="{% url 'update-event' event.id %}" class="my-auto pe-3"><button
+        class="btn btn-outline-light">Update</button></a>
+  </div>
 </div>
-{% endfor %}    
+{% endfor %}
 
 {% endblock %}
