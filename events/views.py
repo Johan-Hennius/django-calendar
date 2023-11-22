@@ -7,7 +7,32 @@ from .models import Event, Venue, User
 from .forms import VenueForm, EventForm
 
 
+def search_venues(request):
+    if request.method == "POST":
+        searched = request.POST['searched']
+        venues = Venue.objects.filter(name__icontains=searched)
+        events = Event.objects.filter(name__icontains=searched)
+        return render(
+            request,
+            'events/search_venues.html',
+            {
+                'searched': searched,
+                'venues': venues,
+                'events': events
+            }
+        )
+    else:
+        return render(
+            request,
+            'events/search_venues.html',
+            {
+
+            }
+        )
+
+
 def show_venue(request, venue_id):
+
     venue = Venue.objects.get(pk=venue_id)
     return render(
         request,
