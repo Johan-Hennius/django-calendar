@@ -40,6 +40,7 @@ class EventForm(ModelForm):
             'name',
             'event_date',
             'venue',
+            'manager',
             'description'
         )
 
@@ -47,6 +48,7 @@ class EventForm(ModelForm):
             'name': '',
             'event_date': 'YYYY-MM-DD HH:MM:SS',
             'venue': 'Venue',
+            'manager': '',
             'description': ''
         }
 
@@ -55,6 +57,7 @@ class EventForm(ModelForm):
             'name': forms.TextInput(attrs={'class':'form-control mb-3', 'placeholder': 'Event Name:'}),
             'event_date': forms.TextInput(attrs={'class':'form-control mb-3', 'placeholder': 'Event date and time:'}),
             'venue': forms.TextInput(attrs={'class':'form-control mb-3', 'placeholder': 'Event venue'}),
+            'manager': forms.TextInput(attrs={'class':'form-control mb-3', 'placeholder': 'Event manager'}),
             'description': forms.Textarea(attrs={'class':'form-control mb-3', 'placeholder': 'Event Description'})
         }
 
