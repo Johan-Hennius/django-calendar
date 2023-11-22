@@ -1,14 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
 
-    
+<div class="text-center d-flex flex-column justify-content-center align-items-center">
         <h1 class="my-3">You have chosen</h1>
         <h2>{{ month }}</h2>
         <h2>{{ year }}</h2>
 
-        <p class="my-3">{{ cal | safe }}</p>
+        <p class="my-3 mx-auto">{{ cal | safe }}</p>
 
         <p>The current year is {{ current_year }}</p>
+</div>
     
 
 {% endblock %}

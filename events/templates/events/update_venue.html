@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 
-    
+<div class="w-100 text-center">
     <h1 class="my-3">Update {{ venue }}</h1>
     <form action="" method="POST">
         {% csrf_token %}
@@ -10,6 +10,6 @@
         <button type="submit" value="Update" class="btn btn-dark">Update</button>
 
     </form>
-    
+</div>
 
 {% endblock %}
