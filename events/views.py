@@ -2,6 +2,20 @@ from django.shortcuts import render
 import calendar
 from calendar import HTMLCalendar
 from datetime import datetime
+from .models import Event, Venue, User
+
+def events_list(request):
+    event_list = Event.objects.all()
+    event_venue = Venue.objects.all()
+    event_attendees = User.objects.all()
+    return render(
+        request,
+        'events/events_list.html',
+        {
+            'event_list': event_list,
+            'event_venue': event_venue,
+            'event_attendees': event_attendees,
+        })
 
 
 # Create your views here.

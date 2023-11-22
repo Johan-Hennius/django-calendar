@@ -32,8 +32,8 @@ class Event(models.Model):
     name = models.CharField('Event Name', max_length=120, unique=True)
     slug = models.SlugField(max_length=120, unique=True)
     event_date = models.DateTimeField('Event Date')
-    venue = models.ForeignKey(Venue, on_delete=models.CASCADE, related_name="event", blank=True)
-    manager =  models.CharField('Event Name', max_length=120)
+    venue = models.ForeignKey(Venue, on_delete=models.CASCADE, related_name="event_location", blank=True)
+    manager =  models.CharField('Manager', max_length=120)
     description = models.TextField()
     attendees = models.ManyToManyField(User, related_name="event_attendee", blank=True)
 
