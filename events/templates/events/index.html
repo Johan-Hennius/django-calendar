@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 
-    <center>
+    
         <h1 class="my-3">You have chosen</h1>
         <h2>{{ month }}</h2>
         <h2>{{ year }}</h2>
@@ -9,6 +9,6 @@
         <p class="my-3">{{ cal | safe }}</p>
 
         <p>The current year is {{ current_year }}</p>
-    </center>
+    
 
 {% endblock %}

@@ -5,8 +5,9 @@
 <table class="table table-dark table-striped table-hover">
     {% for venue in venue_list %}
     <tr>
-        <td>
+        <td class="d-flex justify-content-between">
             <a href="{% url 'show-venue' venue.id %}" class="link-light p-3">{{ venue }}</a>
+            <a href="{% url 'update-venue' venue.id %}" class="my-auto pe-3"><button class="btn btn-outline-light">Update</button></a>
         </td>
     </tr>
     {% endfor %}
