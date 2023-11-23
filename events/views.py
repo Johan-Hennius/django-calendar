@@ -7,6 +7,20 @@ from .models import Event, Venue, User
 from .forms import VenueForm, EventForm
 
 
+def delete_event(request, event_id):
+
+    event = Event.objects.get(pk=event_id)
+    event.delete()
+    return redirect('events-list')
+
+
+def delete_venue(request, venue_id):
+
+    venue = Venue.objects.get(pk=venue_id)
+    venue.delete()
+    return redirect('venues-list')
+
+
 def update_event(request, event_id):
 
     event = Event.objects.get(pk=event_id)

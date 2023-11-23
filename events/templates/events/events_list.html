@@ -16,6 +16,8 @@
   <div class="card-footer">
     <a href="{% url 'update-event' event.id %}" class="my-auto pe-3"><button
         class="btn btn-outline-light">Update</button></a>
+    <a href="{% url 'delete-event' event.id %}" class="my-auto pe-3"><button
+        class="btn btn-danger">Delete</button></a>
   </div>
 </div>
 {% endfor %}

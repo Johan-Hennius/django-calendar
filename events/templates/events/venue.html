@@ -7,7 +7,12 @@
     <tr>
         <td class="d-flex justify-content-between">
             <a href="{% url 'show-venue' venue.id %}" class="link-light p-3">{{ venue }}</a>
-            <a href="{% url 'update-venue' venue.id %}" class="my-auto pe-3"><button class="btn btn-outline-light">Update</button></a>
+            <div class="my-auto">
+                <a href="{% url 'update-venue' venue.id %}" class="my-auto pe-3"><button
+                        class="btn btn-outline-light">Update</button></a>
+                <a href="{% url 'delete-venue' venue.id %}" class="my-auto pe-3"><button
+                        class="btn btn-danger">Delete</button></a>
+            </div>
         </td>
     </tr>
     {% endfor %}
